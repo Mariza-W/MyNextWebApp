@@ -10,6 +10,22 @@ body {
     line-height: 1.6;
 }
 
+/* Skip to Content*/
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: #7a4f9a;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
 /*Hamburger Menu styling*/
 .hamburger-menu {
     position: fixed;
@@ -19,12 +35,30 @@ body {
 }
 
 #menu-toggle {
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .menu-icon {
     font-size: 30px;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.menu-icon:focus {
+    outline: 3px solid white;
+    outline-offset: 5px;
+}
+
+#menu-toggle:focus + .menu-icon {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+.menu a:focus {
+    outline: 3px solid #7a4f9a;
+    outline-offset: 3px;
 }
 
 .menu {
@@ -45,7 +79,8 @@ body {
 
 .menu a {
     display: block;
-    margin: 10px 0;
+    padding: 15px;
+    margin-bottom: 8px;
 }
 
 /* Skip to Content link */
@@ -95,7 +130,8 @@ h1 {
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -130,7 +166,7 @@ h1 {
 
 .flip-card-back {
 
-    background: #b85c8b;
+    background: #ae5784;
     color: white;
 
     transform: rotateY(180deg);
@@ -154,12 +190,6 @@ p {
     font-size: 18px;
 }
 
-/* List styling */
-ul {
-    background-color: #f7eefc;
-    padding: 20px;
-    border-radius: 10px;
-}
 
 /* Link styling */
 a {
@@ -180,11 +210,6 @@ a:hover {
     margin-top: 30px;
 }
 
-/* Unordered list - goals */
-ul li {
-    margin-bottom: 10px;
-}
-
 /* Profile image in circle */
 .profile-image {
     display: block;
@@ -201,7 +226,7 @@ ul li {
     margin: auto auto 10px auto;
 
     background-color: white;
-    color: #b85c8b;
+    color: #ae5784;
 
     text-align: center;
     text-decoration: none;
@@ -228,14 +253,46 @@ ul li {
 
 /* Footer format */
 footer {
-    margin-top: 1000px;
+    margin-top: 40px;
     text-align: center;
     color: #666;
     font-size: 14px;
+}
+
+/* Home button format*/
+.back-home {
+    margin-top: 30px;
+    text-align: left;
 }
 
 /* Containerise to centre and improve readability */
 .container {
     max-width: 900px;
     margin: auto;
+}
+
+a:focus,
+button:focus,
+.menu-icon:focus {
+    outline: 3px solid yellow;
+    outline-offset: 3px;
+}
+
+.markets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.market-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-left: 8px solid #b85c8b;
+}
+
+.market-card h3 {
+    margin-top: 0;
+    color: #7a4f9a;
 }
